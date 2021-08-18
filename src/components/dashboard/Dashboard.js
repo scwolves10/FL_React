@@ -25,6 +25,7 @@ import Orders from './Orders';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import CryptoTracker from './CryptoTracker';
+import cryptoNames from './Deposits';
 
 function Copyright() {
   return (
@@ -180,17 +181,15 @@ export default function Dashboard() {
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
               <QueryClientProvider client={queryClient}>
-    <CryptoTracker cryptoName="bitcoin" />
-    <ReactQueryDevtools />
-  </QueryClientProvider>
-              
-  
-              </Paper>
+            <CryptoTracker cryptoName="bitcoin" />
+            <ReactQueryDevtools />
+            </QueryClientProvider>
+            </Paper>
             </Grid>
-            {/* Recent Deposits */}
+            
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+              <List>{cryptoNames}</List>
               </Paper>
             </Grid>
             {/* Recent Orders */}
