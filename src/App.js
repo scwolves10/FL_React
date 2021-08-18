@@ -4,7 +4,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import CryptoTracker from "./CryptoTracker";
 import "./style.css";
 import Dashboard from "./components/dashboard/Dashboard";
-import { ChainId, DAppProvider, ChainId, DAppProvider } from '@usedapp/core'
+import { ChainId, DAppProvider, ChainId, DAppProvider, useEthers, useEtherBalance } from '@usedapp/core'
 import ReactDOM from "react-dom";
 import { formatEther, formatUnits, useEthers } from '@ethersproject/units'
 
@@ -20,9 +20,10 @@ const config = {
 const App = () => {
   return (
     <div>
+      <Connect />
       <Dashboard />
 
-      <Connect />
+      
 
     </div>
   );
